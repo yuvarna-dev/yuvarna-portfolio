@@ -10,7 +10,10 @@ import {
 
 import "./PortfolioAssistant.css";
 
-const API_URL = "http://localhost:5000/api/chat";
+// Connect to backend
+const API_URL = import.meta.env.DEV
+  ? "http://localhost:5000/api/chat"
+  : import.meta.env.VITE_API_URL;
 
 export default function PortfolioAssistant() {
   const [open, setOpen] = useState(false);
